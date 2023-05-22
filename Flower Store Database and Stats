@@ -1,0 +1,27 @@
+/**floral store database **/ 
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, season TEXT, price INTEGER, popularity INTEGER); 
+INSERT INTO store VALUES (1, "roses", "summer", 9.99, 1); 
+INSERT INTO store VALUES (2, "daisies", "spring", 4.99, 4); 
+INSERT INTO store VALUES (3, "tulips", "spring", 5.99, 7); 
+INSERT INTO store VALUES (4, "thistle", "winter", 5.99, 10); 
+INSERT INTO store VALUES (5, "hydrangeas", "summer", 4.99, 8); 
+INSERT INTO store VALUES (6, "violets", "winter", 3.99, 13); 
+INSERT INTO store VALUES (7, "lilies", "summer", 7.99, 6); 
+INSERT INTO store VALUES (8, "dahlia", "summer", 6.99, 12); 
+INSERT INTO store VALUES (9, "astromeria", "summer", 4.99, 9); 
+INSERT INTO store VALUES (10, "orchid", "fall", 14.99, 11); 
+INSERT INTO store VALUES (11, "peonies", "spring", 6.99, 13); 
+INSERT INTO store VALUES (12, "carnations", "spring", 4.99, 2); 
+INSERT INTO store VALUES (13, "sunflowers", "summer", 8.99, 3); 
+INSERT INTO store VALUES (14, "aster", "fall", 6.99, 14); 
+INSERT INTO store VALUES (16, "chrysanthemum", "fall", 7.99, 15); 
+
+--what are the five most popular items?
+SELECT item, price, popularity FROM store ORDER BY popularity asc limit 5;
+
+--what is the sum of prices for flowers in each season? 
+SELECT SUM(price) FROM store GROUP BY season;
+
+--what is the average price of flowers in the store? 
+SELECT AVG(price) FROM store; 
